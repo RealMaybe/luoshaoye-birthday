@@ -1,3 +1,4 @@
+/* date */
 $(document).ready(function() {
     var t = new Date,
         e = t.getMonth(),
@@ -7,7 +8,7 @@ $(document).ready(function() {
         var h = new Date(e, t).getDay(),
             a = new Date(e, t + 1, 0).getDate(),
             n = "<table>";
-        n += '<thead><tr><th colspan="7">' + e + "年 " + (t + 1) + "月</th></tr>", n += "<tr><th>周日</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th></tr></thead>", n += "<tbody>";
+        n += '<thead><tr><th colspan="7">' + e + " 年 " + (t + 1) + " 月</th></tr>", n += "<tr><th>周日</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th></tr></thead>", n += "<tbody>";
         for (var r = 1, l = 0; l < 6; l++) {
             n += "<tr>";
             for (var o = 0; o < 7; o++)

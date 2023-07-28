@@ -1,36 +1,35 @@
 // public
-@import "../../public/css/set.less";
+@import "../public/css/set.less";
 
 // main
 
 /* calendar */
 .calendar {
     max-width: 100%;
-    min-width: 300px;
-    width: 400px;
+    min-width: 12.5rem;
+    min-height: 20.9375rem;
+    width: 90%;
     height: auto;
     margin: 0 auto;
+    border-bottom: 1px solid @white200;
 
     table {
         width: 100%;
         border-collapse: collapse;
-        border: 1px solid #ccc;
+        border: .0625rem solid #ccc;
     }
 
     th {
         background-color: #f2f2f2;
         text-align: center;
-        padding: 10px;
-    }
-
-    thead th {
-        border-bottom: 1px solid #ccc;
+        padding: .3125rem;
+        border-bottom: .0625rem solid #ccc;
     }
 
     td {
         text-align: center;
-        padding: 10px;
-        border: 1px solid #ccc;
+        padding: .3125rem;
+        border: .0625rem solid #ccc;
     }
 
     .btn {
@@ -38,13 +37,13 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        height: 60px;
-        line-height: 40px;
-    }
+        height: 3.75rem;
+        line-height: 2.5rem;
 
-    .btn button {
-        width: 100px;
-        height: 40px;
+        button {
+            width: 4.375rem;
+            height: 2.5rem;
+        }
     }
 
     .highlight {
