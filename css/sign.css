@@ -1,0 +1,42 @@
+/* calendar */
+.calendar {
+  max-width: 100%;
+  min-width: 300px;
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+.calendar th {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px;
+}
+.calendar thead th {
+  border-bottom: 1px solid #ccc;
+}
+.calendar td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.calendar .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  line-height: 40px;
+}
+.calendar .btn button {
+  width: 100px;
+  height: 40px;
+}
+.calendar .highlight {
+  background-color: #ffd700;
+  font-weight: bold;
+}
