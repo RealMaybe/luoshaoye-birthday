@@ -2,13 +2,13 @@ $(() => {
     let storage = {};
 
     /* H5+ API */
-    window.plus ? document.addEventListener("plusready", function() { storage = { setItem: function(e, t) { plus.storage.setItem(e, t) }, getItem: function(e) { return plus.storage.getItem(e) }, removeItem: function(e) { plus.storage.removeItem(e) }, clear: function() { plus.storage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } }, initializeFooter() }) : (storage = { setItem: function(e, t) { window.localStorage.setItem(e, t) }, getItem: function(e) { return window.localStorage.getItem(e) }, removeItem: function(e) { window.localStorage.removeItem(e) }, clear: function() { window.localStorage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } }, initializeFooter());
+    window.plus ? document.addEventListener("plusready", function() { storage = { setItem: function(e, t) { plus.storage.setItem(e, t) }, getItem: function(e) { return plus.storage.getItem(e) }, removeItem: function(e) { plus.storage.removeItem(e) }, clear: function() { plus.storage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } } }) : (storage = { setItem: function(e, t) { window.localStorage.setItem(e, t) }, getItem: function(e) { return window.localStorage.getItem(e) }, removeItem: function(e) { window.localStorage.removeItem(e) }, clear: function() { window.localStorage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } });
 
     /* footer */
     /* 内容 */
     let footerContent = `
         <div>
-            <span id="switch" class="switch btn on"></span>
+            <span id="switch" class="btn on"></span>
             <!-- page -->
             <nav class="page_btn nav">
                 <a href="./index.html" class="index">首页</a>
@@ -26,7 +26,7 @@ $(() => {
     });
 
     /* footer 隐藏显示 */
-    function initializeFooter() { "closed" === storage.getItem("footerState") ? ($("footer").css("bottom", "-3.125rem"), $("#switch").removeClass("on")) : ($("footer").css("bottom", "0"), $("#switch").addClass("on")) }
+    "closed" == storage.getItem("footerState") ? ($("footer").css("bottom", "-3.125rem"), $("#switch").removeClass("on")) : ($("footer").css("bottom", "0"), $("#switch").addClass("on"));
 
     $("#switch").click(function() { $(this).hasClass("on") ? $("footer").animate({ bottom: "-3.125rem" }, 500, function() { storage.setItem("footerState", "closed") }) : $("footer").animate({ bottom: "0" }, 500, function() { storage.setItem("footerState", "open") }), $(this).toggleClass("on") });
 
