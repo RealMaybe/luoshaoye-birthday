@@ -1,8 +1,9 @@
-/* 网页和H5+App兼容性 本地存储 */
-const storage = window.plus && window.plus.storage ? { setItem: function(e, t) { plus.storage.setItem(e, t) }, getItem: function(e) { return plus.storage.getItem(e) }, removeItem: function(e) { plus.storage.removeItem(e) }, clear: function() { plus.storage.clear() } } : { setItem: function(e, t) { window.localStorage.setItem(e, t) }, getItem: function(e) { return window.localStorage.getItem(e) }, removeItem: function(e) { window.localStorage.removeItem(e) }, clear: function() { window.localStorage.clear() } };
-storage.getSessionItem = function(e) { return window.sessionStorage.getItem(e) }, storage.setSessionItem = function(e, t) { window.sessionStorage.setItem(e, t) }, storage.removeSessionItem = function(e) { window.sessionStorage.removeItem(e) }, storage.clearSession = function() { window.sessionStorage.clear() };
-
 $(() => {
+    let storage = {};
+
+    /* H5+ API */
+    window.plus ? document.addEventListener("plusready", function() { storage = { setItem: function(e, t) { plus.storage.setItem(e, t) }, getItem: function(e) { return plus.storage.getItem(e) }, removeItem: function(e) { plus.storage.removeItem(e) }, clear: function() { plus.storage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } }, initializeFooter() }) : (storage = { setItem: function(e, t) { window.localStorage.setItem(e, t) }, getItem: function(e) { return window.localStorage.getItem(e) }, removeItem: function(e) { window.localStorage.removeItem(e) }, clear: function() { window.localStorage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } }, initializeFooter());
+
     /* footer */
     /* 内容 */
     let footerContent = `
@@ -20,45 +21,32 @@ $(() => {
     /* nav 动态添加on */
     let bodyId = $("body").attr("id");
     $("nav.nav").find("a").each(function() {
-        let className = $(this).attr("class");
-        if (bodyId == className) {
-            $(this).addClass("on");
-        }
+        let a = $(this).attr("class");
+        bodyId == a && $(this).addClass("on")
     });
 
     /* footer 隐藏显示 */
-    let footerState = storage.getItem("footerState");
-    "closed" === footerState ? ($("footer").css("bottom", "-3.125rem"), $("#switch").removeClass("on")) : ($("footer").css("bottom", "0"), $("#switch").addClass("on")), $("#switch").click(function() { $(this).hasClass("on") ? $("footer").animate({ bottom: "-3.125rem" }, 500, function() { storage.setItem("footerState", "closed") }) : $("footer").animate({ bottom: "0" }, 500, function() { storage.setItem("footerState", "open") }), $(this).toggleClass("on") });
+    function initializeFooter() { "closed" === storage.getItem("footerState") ? ($("footer").css("bottom", "-3.125rem"), $("#switch").removeClass("on")) : ($("footer").css("bottom", "0"), $("#switch").addClass("on")) }
 
+    $("#switch").click(function() { $(this).hasClass("on") ? $("footer").animate({ bottom: "-3.125rem" }, 500, function() { storage.setItem("footerState", "closed") }) : $("footer").animate({ bottom: "0" }, 500, function() { storage.setItem("footerState", "open") }), $(this).toggleClass("on") });
 
     /* time */
-    function time(time) {
-        let now_time = new Date().getTime();
-        let target_time = new Date(time /* "2024-08-12 0:0:0" */ ).getTime();
-        let difference = (target_time - now_time) / 1000;
-
-        let day = parseInt(difference / 60 / 60 / 24);
-        let hour = parseInt(difference / 60 / 60 % 24);
-        let minute = parseInt(difference / 60 % 60);
-        let second = parseInt(difference % 60);
-
-        let seconds = numZero(parseInt(second % 60));
-        let minutes = numZero(parseInt(minute % 60));
-        let hours = numZero(parseInt(hour % 60));
-        let days = numZero(parseInt(day));
-
-        return [days, hours, minutes, seconds]
-    };
+    function time(e) {
+        let n = (new Date).getTime(),
+            t = (new Date(e).getTime() - n) / 1e3,
+            r = parseInt(t / 60 / 60 / 24),
+            a = parseInt(t / 60 / 60 % 24),
+            m = parseInt(t / 60 % 60),
+            p = parseInt(t % 60),
+            s = numZero(parseInt(p % 60)),
+            I = numZero(parseInt(m % 60)),
+            u = numZero(parseInt(a % 60));
+        return [numZero(parseInt(r)), u, I, s]
+    }
     time();
 
     /* 数字如果小于零则一直显示0 */
-    function numZero(num) {
-        if (num > 0) {
-            return num = num;
-        } else if (num <= 0) {
-            return num = 0;
-        }
-    };
+    function numZero(n) { return n > 0 ? n : n <= 0 ? 0 : void 0 }
 
     // $(".day").html(time());
     // let birthDay_time = setInterval(time, 1000);
