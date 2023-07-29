@@ -20,7 +20,7 @@ $(() => {
             $(".banner_dot li").eq(index).addClass("on").siblings().removeClass("on");
         };
 
-        let time_con = 3000;
+        let time_con = 5000;
         let x = setInterval(move, time_con);
         $(".banner_dot li").on("click", function() {
             index = $(this).index();

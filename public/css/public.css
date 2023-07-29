@@ -1,3 +1,15 @@
+@font-face {
+  font-family: STXingkai;
+  src: url(华文行楷.ttf);
+}
+@font-face {
+  font-family: simkai;
+  src: url(楷体.ttf);
+}
+html {
+  font-size: 16px !important;
+  color: #000000;
+}
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +17,10 @@
 }
 ul {
   list-style: none;
+}
+a {
+  color: #000000;
+  text-decoration: none;
 }
 footer {
   position: fixed;
@@ -30,11 +46,12 @@ footer .btn {
   width: 2.5rem;
   height: 1.25rem;
   border: 0.0625rem solid #dedede;
+  opacity: 0.5;
   border-bottom: none;
   border-top-right-radius: 0.9375rem;
-  overflow: hidden;
   background: #ffffff;
   box-shadow: 0px -7px 7px -3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   cursor: pointer;
 }
 footer .btn::after {
@@ -46,6 +63,9 @@ footer .btn::after {
   background-size: 100%;
   transition: transform 0.5s;
 }
+footer .btn.on {
+  opacity: 1;
+}
 footer .btn.on::after {
   transform: rotate(180deg);
 }
@@ -55,6 +75,8 @@ footer nav {
   align-items: center;
   width: 100%;
   height: 100%;
+  text-align: center;
+  line-height: 3.125rem;
 }
 footer nav a {
   max-width: 33.33%;
@@ -65,4 +87,8 @@ footer nav a {
 }
 footer nav a:last-child {
   border: none;
+}
+footer nav a.on {
+  color: #0080ff;
+  font-weight: bold;
 }

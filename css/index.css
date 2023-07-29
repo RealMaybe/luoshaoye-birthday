@@ -1,3 +1,11 @@
+@font-face {
+  font-family: STXingkai;
+  src: url(华文行楷.ttf);
+}
+@font-face {
+  font-family: simkai;
+  src: url(楷体.ttf);
+}
 main {
   width: 100vw;
   height: 100vh;
@@ -49,4 +57,7 @@ main .banner .banner_dot li {
 }
 main .banner .banner_dot li.on {
   background-color: #5050ff;
+}
+footer {
+  opacity: 0.7;
 }

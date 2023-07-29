@@ -7,12 +7,12 @@ $(() => {
     /* 内容 */
     let footerContent = `
         <div>
-            <span class="btn on"></span>
+            <span id="switch" class="switch btn on"></span>
             <!-- page -->
             <nav class="page_btn nav">
-                <a href="./index.html" class="index"></a>
-                <a href="./sign.html" class="sign"></a>
-                <a href="./user.html" class="user"></a>
+                <a href="./index.html" class="index">首页</a>
+                <a href="./message.html" class="message">信息</a>
+                <a href="./user.html" class="user">我的</a>
             </nav>
         </div>`;
     $("footer").html(footerContent);
@@ -28,7 +28,7 @@ $(() => {
 
     /* footer 隐藏显示 */
     let footerState = storage.getItem("footerState");
-    "closed" === footerState ? ($("footer").css("bottom", "-3.125rem"), $(".btn").removeClass("on")) : ($("footer").css("bottom", "0"), $(".btn").addClass("on")), $(".btn").click(function() { $(this).hasClass("on") ? $("footer").animate({ bottom: "-3.125rem" }, 500, function() { storage.setItem("footerState", "closed") }) : $("footer").animate({ bottom: "0" }, 500, function() { storage.setItem("footerState", "open") }), $(this).toggleClass("on") });
+    "closed" === footerState ? ($("footer").css("bottom", "-3.125rem"), $("#switch").removeClass("on")) : ($("footer").css("bottom", "0"), $("#switch").addClass("on")), $("#switch").click(function() { $(this).hasClass("on") ? $("footer").animate({ bottom: "-3.125rem" }, 500, function() { storage.setItem("footerState", "closed") }) : $("footer").animate({ bottom: "0" }, 500, function() { storage.setItem("footerState", "open") }), $(this).toggleClass("on") });
 
 
     /* time */
