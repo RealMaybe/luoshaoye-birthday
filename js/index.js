@@ -1,32 +1,17 @@
 $(() => {
-    /* 兼容 */
-    function win_size() {
-        let win_height = $(window).height();
-        let img_height = ($(".banner_img img").height());
-    }
-    win_size();
-    $(window).resize(win_size);
-
     /* 轮播图 */
     function animation() {
-        let index = 0;
-
-        function move() {
-            index += 1;
-            if ($(".banner_img li").length <= index) {
-                index = 0
-            };
-            $(".banner_img li").eq(index).show(1000).siblings().hide(1000);
-            $(".banner_dot li").eq(index).addClass("on").siblings().removeClass("on");
-        };
-
-        let time_con = 5000;
-        let x = setInterval(move, time_con);
-        $(".banner_dot li").on("click", function() {
-            index = $(this).index();
-            $(".banner_img li").eq(index).show(500).siblings().hide(500);
-            $(this).addClass("on").siblings().removeClass("on");
-        });
+        let n = 0;
+        setInterval(function() { n += 1, $(".banner_img li").length <= n && (n = 0), $(".banner_img li").eq(n).show(1e3).siblings().hide(1e3), $(".banner_dot li").eq(n).addClass("on").siblings().removeClass("on") }, 5e3), $(".banner_dot li").on("click", function() { n = $(this).index(), $(".banner_img li").eq(n).show(500).siblings().hide(500), $(this).addClass("on").siblings().removeClass("on") })
     };
     animation();
+
+    /* 计时器 */
+    $("#timer .hisName>span").html($year), birthdayTimer();
+    let birthday_time = setInterval(birthdayTimer, 1e3);
+
+    function birthdayTimer() {
+        let t = time($year + "-8-12 0:0:0");
+        $("#timer .day").html(t[0]), $("#timer .hour").html(t[1]), $("#timer .min").html(t[2]), $("#timer .sec").html(t[3])
+    }
 })

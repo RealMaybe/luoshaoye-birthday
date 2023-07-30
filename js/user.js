@@ -1,31 +1,29 @@
-/* date */
 $(document).ready(function() {
-    var t = new Date,
-        e = t.getMonth(),
-        h = t.getFullYear();
+    function updateCalendar(e, a) {
+        let h = new Date,
+            n = e || h.getMonth(),
+            l = a || h.getFullYear();
 
-    function a(t, e) {
-        var h = new Date(e, t).getDay(),
-            a = new Date(e, t + 1, 0).getDate(),
-            n = "<table>";
-        n += '<thead><tr><th colspan="7">' + e + " 年 " + (t + 1) + " 月</th></tr>", n += "<tr><th>周日</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th></tr></thead>", n += "<tbody>";
-        for (var r = 1, l = 0; l < 6; l++) {
-            n += "<tr>";
-            for (var o = 0; o < 7; o++)
-                if (0 === l && o < h) n += "<td></td>";
-                else {
-                    if (r > a) break;
-                    var c = "",
-                        d = new Date;
-                    e === d.getFullYear() && t === d.getMonth() && r === d.getDate() && (c = "highlight"), n += '<td class="' + c + '">' + r + "</td>", r++
-                }
-            n += "</tr>"
+        function r(t, e) {
+            let a = new Date(e, t).getDay(),
+                h = new Date(e, t + 1, 0).getDate(),
+                n = "<table>";
+            n += '<thead><tr><th colspan="7">' + e + " 年 " + (t + 1) + " 月</th></tr>", n += "<tr><th>周日</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th></tr></thead>", n += "<tbody>";
+            for (let l = 1, r = 0; r < 6; r++) {
+                n += "<tr>";
+                for (let o = 0; o < 7; o++)
+                    if (0 === r && o < a) n += "<td></td>";
+                    else {
+                        if (l > h) break;
+                        let a = "",
+                            r = new Date;
+                        e === r.getFullYear() && t === r.getMonth() && l === r.getDate() && (a = "highlight"), n += '<td class="' + a + '">' + l + "</td>", l++
+                    }
+                n += "</tr>"
+            }
+            n += "</tbody></table>", $("#calendar").html(n)
         }
-        n += "</tbody></table>", $("#calendar").html(n)
+        r(n, l), $("#prevMonth").click(() => { l = 0 === n ? l - 1 : l, r(n = 0 === n ? 11 : n - 1, l) }), $("#nextMonth").click(() => { l = 11 === n ? l + 1 : l, r(n = (n + 1) % 12, l) }), $("#currentMonth").click(() => { updateCalendar(h.getMonth(), h.getFullYear()) })
     }
-    a(e, h), $("#prevMonth").click(function() {
-        h = 0 === e ? h - 1 : h, a(e = 0 === e ? 11 : e - 1, h)
-    }), $("#nextMonth").click(function() {
-        h = 11 === e ? h + 1 : h, a(e = (e + 1) % 12, h)
-    })
+    updateCalendar(), setInterval(updateCalendar, 6e4);
 });

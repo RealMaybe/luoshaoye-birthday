@@ -1,5 +1,5 @@
 // public
-@import "../public/css/set.less";
+@import "../../public/css/set.less";
 
 // main
 main {
@@ -60,22 +60,76 @@ main {
         }
     }
 
-    .timer {
+    #timer {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        .flex-between-center();
+        flex-direction: column;
         min-width: 20rem;
         max-width: 35rem;
         width: 80%;
+        padding: 2rem 0 .625rem;
         aspect-ratio: 1/1;
+        font-family: STXingkai;
+        font-size: 2rem;
         background: rgba(255, 255, 255, .5);
         border-radius: .625rem;
         z-index: 9;
+
+        &>* {
+            width: 100%;
+            text-align: center;
+        }
+
+        .hisName {
+            font-size: 3.125rem;
+        }
+
+        .days {
+            font-size: 11rem;
+            line-height: 13.75rem;
+        }
+
+        .exact_value {
+            span {
+                margin-right: .3125rem;
+            }
+        }
     }
 }
 
 // footer
 footer {
     opacity: .7;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        #timer {
+            font-size: 1.5rem;
+
+            .hisName {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 481px) {
+    main {
+        #timer {
+            font-size: 1.5rem;
+
+            .hisName {
+                font-size: 1.875rem;
+            }
+
+            .days {
+                font-size: 7rem;
+                line-height: 8.75rem;
+            }
+        }
+    }
 }
