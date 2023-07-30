@@ -12,6 +12,7 @@ $(() => {
 
     function birthdayTimer() {
         let t = time($year + "-8-12 0:0:0");
-        $("#timer .day").html(t[0]), $("#timer .hour").html(t[1]), $("#timer .min").html(t[2]), $("#timer .sec").html(t[3])
+        if (0 == t[4]) return $("#timer .exact_value").html("亲爱的洛少爷，<br>祝你生日快乐！").css("font-size", "2rem"), void clearInterval(birthday_time);
+        $("#timer .day1").html(t[0] + 1), $("#timer .day").html(t[0]), $("#timer .hour").html(t[1]), $("#timer .min").html(t[2]), $("#timer .sec").html(t[3])
     }
 })

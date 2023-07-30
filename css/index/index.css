@@ -78,8 +78,11 @@ main #timer .hisName {
   font-size: 3.125rem;
 }
 main #timer .days {
-  font-size: 11rem;
+  font-size: 13rem;
   line-height: 13.75rem;
+}
+main #timer .days span:last-child {
+  font-size: 3rem;
 }
 main #timer .exact_value span {
   margin-right: 0.3125rem;
@@ -103,7 +106,7 @@ footer {
     font-size: 1.875rem;
   }
   main #timer .days {
-    font-size: 7rem;
+    font-size: 8rem;
     line-height: 8.75rem;
   }
 }

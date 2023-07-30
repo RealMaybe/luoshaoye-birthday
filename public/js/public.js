@@ -46,10 +46,11 @@ function time(e) {
         t = (new Date(e).getTime() - n) / 1e3,
         r = parseInt(t / 60 / 60 / 24),
         a = parseInt(t / 60 / 60 % 24),
-        m = parseInt(t / 60 % 60),
-        p = parseInt(t % 60),
-        s = numZero(parseInt(p % 60)),
-        I = numZero(parseInt(m % 60)),
-        u = numZero(parseInt(a % 60));
-    return [numZero(parseInt(r)), u, I, s]
+        p = parseInt(t / 60 % 60),
+        s = parseInt(t % 60),
+        I = numZero(parseInt(s % 60)),
+        m = numZero(parseInt(p % 60)),
+        u = numZero(parseInt(a % 60)),
+        o = numZero(parseInt(r)) + u + m + I;
+    return [numZero(parseInt(r)), u, m, I, o]
 }
