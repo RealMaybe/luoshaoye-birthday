@@ -1,9 +1,14 @@
+html {
+    font-size: 16px !important;
+    color: #000;
+}
+
 @font-face {
     font-family: STXingkai;
-    src: url(华文行楷.ttf) format("truetype");
+    src: url(STXingkai.ttf) format("truetype");
 }
 
 @font-face {
     font-family: simkai;
-    src: url(楷体.ttf) format("truetype");
+    src: url(simkai.ttf) format("truetype");
 }

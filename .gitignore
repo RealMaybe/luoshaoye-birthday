@@ -8,6 +8,7 @@ bin-release/
 .settings/
 .vscode/
 node_modules/
+unpackage/
 set.css
 
 # Executables
