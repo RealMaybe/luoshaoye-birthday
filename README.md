@@ -49,6 +49,21 @@
 
 -----
 
+## 规划中要做的内容
+
+- 页面的美化
+- 开屏图
+- App外显logo
+- 应用相关内容页面
+- 用户界面登录注册
+- 访客模式
+- 签到功能
+- 公告部分的动态更新
+- 后台系统
+- 论坛、博客内容
+
+-----
+
 ## 发行版更新日志
 
 ### v0.1.2-bata
@@ -72,4 +87,4 @@
 
 #### 版本下载地址
 
-[洛少爷生日倒计时v0.1.2-bata](https://gitee.com/RealMaybe0429/luoshaoye-birthday/releases/tag/v0.1.2-bata)
+[洛少爷生日倒计时v0.1.2-bata | gitee](https://gitee.com/RealMaybe0429/luoshaoye-birthday/releases/tag/v0.1.2-bata)
