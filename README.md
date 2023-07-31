@@ -69,3 +69,7 @@
   - 由原本使用相对屏幕比例修改为稳定1:1比例
 - 修复了主页背景图显示位置出错问题
   - 由原版使用js控制显示位置更改为使用css控制
+
+#### 版本下载地址
+
+[洛少爷生日倒计时v0.1.2-bata](https://gitee.com/RealMaybe0429/luoshaoye-birthday/releases/tag/v0.1.2-bata)
