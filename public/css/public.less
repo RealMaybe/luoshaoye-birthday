@@ -1,0 +1,104 @@
+/* public */
+@import "./set.less";
+@import "./font.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: @black;
+    text-decoration: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* page */
+main {
+    width: 100%;
+    padding: 1rem;
+    overflow-wrap: break-word;
+
+    .title {
+        width: 100%;
+        border-bottom: .0625rem solid @white200;
+
+        &>* {
+            width: 100%;
+            margin-bottom: .625rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: @black;
+            font-family: "STXingkai", "华文行楷";
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: right;
+            color: @white222;
+            font-family: "simkai", "楷体";
+        }
+    }
+
+    .content {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: .0625rem solid @white239;
+        font-family: "simkai", "楷体";
+
+        &>* {
+            width: 100%;
+        }
+
+        p {
+            margin-bottom: 5px;
+            text-indent: 2em;
+        }
+
+        .support {
+            width: 100%;
+            margin-top: 1rem;
+
+            a {
+                img {
+                    display: block;
+                    width: 150px;
+                    margin: 0 auto;
+                    animation: pulse 1s infinite;
+
+                    &:hover {
+                        animation-play-state: paused;
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        text-align: right;
+        margin: 1.25rem 0;
+        font-size: 1.25rem;
+        font-family: "STXingkai", "华文行楷";
+    }
+}
