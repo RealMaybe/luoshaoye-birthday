@@ -7,3 +7,5 @@ const $year = 2024,
     let t = $("title").text() + ` - ${month}${day} - 洛少爷2024生日倒计时`;
     $("title").text(t)
 });
+
+$("#main").append(``);
