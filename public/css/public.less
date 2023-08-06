@@ -62,7 +62,7 @@ main {
 
     .content {
         width: 100%;
-        padding: 1rem 0;
+        padding-top: 1rem;
         font-family: "simkai", "楷体";
 
         &>* {
@@ -70,7 +70,7 @@ main {
         }
 
         p {
-            margin-bottom: 5px;
+            margin-bottom: .5rem;
             text-indent: 2em;
 
             &:last-child {
@@ -78,47 +78,48 @@ main {
             }
         }
     }
+}
 
-    footer {
+footer {
+    width: 100%;
+    text-align: right;
+    padding: 0 1rem;
+    margin: 1.25rem 0;
+    font-size: 1.25rem;
+    font-family: "STXingkai", "华文行楷";
+
+    .support {
         width: 100%;
-        text-align: right;
-        margin: 1.25rem 0;
-        font-size: 1.25rem;
-        font-family: "STXingkai", "华文行楷";
+        margin: 1rem 0;
+        padding: 1rem 0 .5rem;
+        text-align: left;
+        font-size: 1.125rem;
+        font-family: "simkai", "楷体";
+        border-top: .0625rem solid @white239;
+        border-bottom: .0625rem solid @white200;
 
-        .support {
-            width: 100%;
+        p {
+            margin-bottom: .5rem;
+            text-indent: 2em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        div {
             margin: 1rem 0;
-            padding: 1rem 0 .5rem;
-            text-align: left;
-            font-size: 1rem;
-            font-family: "simkai", "楷体";
-            border-top: .0625rem solid @white239;
-            border-bottom: .0625rem solid @white200;
+        }
 
-            p {
-                margin-bottom: .3125rem;
-                text-indent: 2em;
+        a {
+            img {
+                display: block;
+                width: 200px;
+                margin: 0 auto;
+                animation: pulse 1s infinite;
 
-                &:last-child {
-                    margin-bottom: 0;
-                }
-            }
-
-            div {
-                margin: 1rem 0;
-            }
-
-            a {
-                img {
-                    display: block;
-                    width: 200px;
-                    margin: 0 auto;
-                    animation: pulse 1s infinite;
-
-                    &:hover {
-                        animation-play-state: paused;
-                    }
+                &:hover {
+                    animation-play-state: paused;
                 }
             }
         }

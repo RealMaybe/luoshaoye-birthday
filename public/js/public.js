@@ -8,7 +8,7 @@ const $year = 2024,
     $("title").text(t)
 });
 
-$("#main.notice").append(`
+$("#main.notice").after(`
 <footer>
     <article class="support">
         <p>最后，我们要衷心感谢所有使用本软件的用户对我们的支持。你们的支持将是我们持续更新的最大动力。</p>
