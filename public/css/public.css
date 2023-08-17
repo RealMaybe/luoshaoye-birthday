@@ -1,4 +1,15 @@
-@import "fonts.css";
+html {
+  font-size: 16px !important;
+  color: #000;
+}
+@font-face {
+  font-family: STXingkai;
+  src: url(STXingkai.ttf) format("truetype");
+}
+@font-face {
+  font-family: simkai;
+  src: url(simkai.ttf) format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
