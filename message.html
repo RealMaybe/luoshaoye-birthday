@@ -13,12 +13,15 @@
 
 <body id="message">
 
-    <main id="main" class="message main pe">
+    <main id="main" class="main pe message">
         <!-- 公告 -->
         <section id="notice">
-            <h1 class="title">官方公告</h1>
+            <h1 class="title">
+                <span>官方公告</span>
+                <button id="notice_renew">刷新</button>
+            </h1>
             <article class="content">
-                <ul>
+                <ul id="show">
                     <li>
                         <span>[2023/07/29]</span>
                         <a href="javascript:;">更新公告</a>
@@ -35,6 +38,7 @@
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="./public/js/public.js"></script>
     <!-- JavaScript -->
+    <script src="./js/information.js"></script>
 
 </body>
 

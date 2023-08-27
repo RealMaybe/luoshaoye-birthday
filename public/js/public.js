@@ -3,7 +3,7 @@ let storage = {};
 window.plus ? document.addEventListener("plusready", function() { storage = { setItem: function(e, t) { plus.storage.setItem(e, t) }, getItem: function(e) { return plus.storage.getItem(e) }, removeItem: function(e) { plus.storage.removeItem(e) }, clear: function() { plus.storage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } } }) : (storage = { setItem: function(e, t) { window.localStorage.setItem(e, t) }, getItem: function(e) { return window.localStorage.getItem(e) }, removeItem: function(e) { window.localStorage.removeItem(e) }, clear: function() { window.localStorage.clear() }, getSessionItem: function(e) { return window.sessionStorage.getItem(e) }, setSessionItem: function(e, t) { window.sessionStorage.setItem(e, t) }, removeSessionItem: function(e) { window.sessionStorage.removeItem(e) }, clearSession: function() { window.sessionStorage.clear() } });
 
 /* public year */
-const $year = 2023;
+const $year = 2024;
 
 /* title */
 "undefined" != typeof jQuery && $(document).ready(() => {
@@ -19,6 +19,7 @@ let footerContent = `
     <!-- page -->
     <nav class="page_btn nav">
         <a href="./index.html" class="index">首页</a>
+        <a href="./interactive.html" class="interactive">交互</a>
         <a href="./message.html" class="message">信息</a>
         <a href="./user.html" class="user">我的</a>
     </nav>
