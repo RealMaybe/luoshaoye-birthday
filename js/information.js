@@ -1,12 +1,10 @@
-const infoURL = "http://127.0.0.1:8121";
-
 $(document).ready(function() {
     notice_renew();
     $("#notice_renew").click(notice_renew);
 
     function notice_renew() {
         $.ajax({
-            url: infoURL + "/api/notice",
+            url: infoURL + "/notice",
             type: "GET",
             success: function(response) {
                 // 清空公告容器
@@ -38,7 +36,7 @@ $(document).ready(function() {
         let content = $(e.target).siblings("span").text().slice(1, -1);
         let array = content.toString().split("/");
         const [year, month, day] = array;
-        const url = `http://http://notice.realmaybe0429.top/notice/${year}${month}${day}.html`;
+        const url = `http://notice.realmaybe0429.top/notice/${year}${month}${day}.html`;
         $(".iframe iframe").attr("src", url);
         $(".iframe").css("display", "block");
     };

@@ -91,9 +91,10 @@ main #notice .iframe .icon {
   height: 1.5rem;
   background: url(../../images/message/close.png) 0 0 no-repeat;
   background-size: cover;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 50%;
 }
 main #notice .iframe iframe {
   width: 100vw;
   height: calc(100vh - 2rem);
-  border-top: 0.125rem solid #969696;
 }
