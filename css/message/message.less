@@ -50,6 +50,7 @@ main {
             li {
                 position: relative;
                 margin-bottom: .3125rem;
+                line-height: 1.5rem;
 
                 span {
                     margin-right: .5rem;
@@ -76,6 +77,34 @@ main {
                         border-radius: .75rem;
                     }
                 } */
+            }
+        }
+
+        .iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            padding-top: 2rem;
+            z-index: 999;
+            background: @white255;
+
+            .icon {
+                position: absolute;
+                top: .25rem;
+                right: .25rem;
+                width: 1.5rem;
+                height: 1.5rem;
+                background: url(../../images/message/close.png) 0 0 no-repeat;
+                background-size: cover;
+            }
+
+            iframe {
+                width: 100vw;
+                height: calc(100vh - 2rem);
+                border-top: .125rem solid @grey150;
             }
         }
     }

@@ -2,14 +2,6 @@ html {
   font-size: 16px !important;
   color: #000;
 }
-@font-face {
-  font-family: STXingkai;
-  src: url(STXingkai.ttf) format("truetype");
-}
-@font-face {
-  font-family: simkai;
-  src: url(simkai.ttf) format("truetype");
-}
 main {
   width: 100vw;
   min-height: 6.25rem;
@@ -55,6 +47,7 @@ main #notice .content {
 main #notice .content li {
   position: relative;
   margin-bottom: 0.3125rem;
+  line-height: 1.5rem;
   /* &:first-child {
                     &::after {
                         content: "NEW";
@@ -78,4 +71,29 @@ main #notice .content li span {
 }
 main #notice .content li a {
   text-decoration: underline;
+}
+main #notice .iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 2rem;
+  z-index: 999;
+  background: #ffffff;
+}
+main #notice .iframe .icon {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url(../../images/message/close.png) 0 0 no-repeat;
+  background-size: cover;
+}
+main #notice .iframe iframe {
+  width: 100vw;
+  height: calc(100vh - 2rem);
+  border-top: 0.125rem solid #969696;
 }
