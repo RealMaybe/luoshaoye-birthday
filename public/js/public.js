@@ -19,6 +19,6 @@ $("#main.notice").after(`
             </a>
         </div>
     </article>
-    <p>洛少爷生日倒计时项目开发组</p>
+    <p>洛少爷生日倒计时软件 项目开发组</p>
 </footer>
 `);
