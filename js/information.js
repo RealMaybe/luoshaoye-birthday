@@ -35,14 +35,16 @@ $(document).ready(function() {
     };
 
     function preview_(e) {
-        let content = $(e.target).siblings("span").text().replace(new RegExp("]", 'g'), "");
+        let content = $(e.target).siblings("span").text().slice(1, -1);
         let array = content.toString().split("/");
         const [year, month, day] = array;
-        year;
-        const url = `https://realmaybe0429.gitee.io/luoshaoye-birthday/notice/${month}${day}/${month}${day}.html`;
+        const url = `https://realmaybe0429.gitee.io/luoshaoye-birthday/notice/${year}${month}${day}.html`;
         $(".iframe iframe").attr("src", url);
         $(".iframe").css("display", "block");
     };
 
-    $(".iframe .icon").click(() => { $(".iframe").css("display", "none") })
+    $(".iframe .icon").click(() => {
+        $(".iframe").css("display", "none");
+        $(".iframe iframe").attr("src", "");
+    })
 })
