@@ -1,4 +1,17 @@
 /* public */
+/* color */
+html {
+  font-size: 16px !important;
+  color: #000;
+}
+@font-face {
+  font-family: STXingkai;
+  src: url("STXingkai.ttf") format("truetype");
+}
+@font-face {
+  font-family: simkai;
+  src: url("simkai.ttf") format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
@@ -63,12 +76,15 @@ main .content p {
 main .content p:last-child {
   margin-bottom: 0;
 }
+main .content a {
+  text-decoration: underline;
+}
 footer {
   width: 100%;
   text-align: right;
   padding: 0 1rem;
   margin: 1.25rem 0;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-family: "STXingkai", "华文行楷";
 }
 footer .support {
@@ -76,7 +92,7 @@ footer .support {
   margin: 1rem 0;
   padding: 1rem 0 0.5rem;
   text-align: left;
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-family: "simkai", "楷体";
   border-top: 0.0625rem solid #efefef;
   border-bottom: 0.0625rem solid #c8c8c8;
@@ -93,7 +109,7 @@ footer .support div {
 }
 footer .support a img {
   display: block;
-  width: 200px;
+  width: 150px;
   margin: 0 auto;
   animation: pulse 1s infinite;
 }
